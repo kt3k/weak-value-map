@@ -1,4 +1,4 @@
-# @kt3k/weak-value-map v0.1.0
+# @kt3k/weak-value-map v0.1.1
 
 > Map compatible object, which stores the values by weak references
 
