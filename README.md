@@ -22,9 +22,9 @@ import { assert, assertFalse } from "@std/assert";
 
 const wvm = new WeakValueMap();
 
-let myObject = { /* some large object */ }
+let myObject = {/* some large object */};
 
-wvm.set(1, myObject)
+wvm.set(1, myObject);
 
 assert(wvm.has(1));
 assert(wvm.get(1) === myObject);
