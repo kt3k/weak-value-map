@@ -9,8 +9,6 @@
     "@std/assert": "jsr:@std/assert@1"
   },
   "fmt": {
-    "options": {
-      "semiColons": false
-    }
+    "semiColons": false
   }
 }

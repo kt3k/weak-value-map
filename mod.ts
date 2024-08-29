@@ -1,5 +1,29 @@
 /**
- * Cache values with weak reference with values
+ * Map compatible object, which stores the values by weak references
+ *
+ * @example Usage
+ * ```ts
+ * import { WeakValueMap } from "@kt3k/weak-value-map"
+ * import { assert, assertFalse } from "@std/assert"
+ *
+ * const wvm = new WeakValueMap()
+ *
+ * let myObject = {
+ *   // some large object
+ * }
+ *
+ * wvm.set(1, myObject)
+ *
+ * assert(wvm.has(1))
+ * assert(wvm.get(1) === myObject)
+ *
+ * myObject = null // the object doesn't have reference anymore
+ *
+ * // ... some time later
+ *
+ * assertFalse(wvm.has(1))
+ * assert(wvm.get(1) === undefined)
+ * ```
  */
 export class WeakValueMap<K, V extends WeakKey> implements Map<K, V> {
   readonly #map = new Map<K, WeakRef<V>>()
